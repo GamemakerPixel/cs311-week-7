@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import FoodItem from "@/app/food_item"
+import PageTitle from "@/app/page_title"
 
 export default function Entrees() {
   const [entrees, setEntrees] = useState<string[]>(null);
@@ -12,7 +13,7 @@ export default function Entrees() {
       let fileContentsResponse: Awaited<Promise<string>> = await fetch('/entrees.txt');
       let fileContents = await fileContentsResponse.text();
       // Cross platform newline regex
-      const loadedEntrees = fileContents.split(/\r?\n/);
+      const loadedEntrees = fileContents.split(/\r?\n/).filter(e => e);
       setEntrees(loadedEntrees);
     }
     fetchEntrees();
@@ -26,8 +27,8 @@ export default function Entrees() {
 
   return (
     <div>
-      <h1>Entrees</h1>
-      <p>Try out our entrees!</p>
+      <PageTitle text="Entrees"/>
+      <p className="prompt-text">Try out our entrees!</p>
       <ul>
         {entrees.map((entree, index) => (
           // I've learned that parenthesis instead of brackets have an implicit return.

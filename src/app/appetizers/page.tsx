@@ -1,11 +1,12 @@
 import FoodItem from '@/app/food_item'
+import PageTitle from '@/app/page_title'
 
 
 export default function Appetizers() {
   return (
     <div>
-      <h1>Appetizers</h1>
-      <p>Check out our appetizers below!</p>
+      <PageTitle text="Appetizers" />
+      <p className="prompt-text">Check out our appetizers below!</p>
       <ul>
         <FoodItem name="Spinned ash and " />
         <FoodItem name="Call it Marty" />
