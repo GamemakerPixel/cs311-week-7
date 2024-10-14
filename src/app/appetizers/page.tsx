@@ -8,8 +8,9 @@ export default function Appetizers() {
       <PageTitle text="Appetizers" />
       <p className="prompt-text">Check out our appetizers below!</p>
       <ul>
-        <FoodItem name="Spinned ash and " />
+        <FoodItem name="Probably an Egg pun ch?" />
         <FoodItem name="Call it Marty" />
+        <FoodItem name="Cheese sticks that someone fried" />
       </ul>
     </div>
   );
